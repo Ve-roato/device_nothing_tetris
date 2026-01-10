@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common infinity stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Enable ADPF pipeline for UI performance
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -24,11 +24,16 @@ GPU_MIN_FREQ_PATH := /sys/devices/platform/13000000.mali/devfreq/min_freq
 # Inherit from tetris device
 $(call inherit-product, device/nothing/tetris/device.mk)
 
-PRODUCT_NAME := lineage_tetris
+PRODUCT_NAME := infinity_tetris
 PRODUCT_DEVICE := tetris
 PRODUCT_BRAND := Nothing
 PRODUCT_MANUFACTURER := Nothing
 PRODUCT_MODEL := A015
+
+#Infinity Flags
+INFINITY_MAINTAINER := "Sofia"
+TARGET_HAS_UDFPS := true
+WITH_GAPPS := false
 
 PRODUCT_GMS_CLIENTID_BASE := android-nothing
 
